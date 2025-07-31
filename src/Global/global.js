@@ -2,13 +2,12 @@
 import { css } from '@emotion/react';
 export const reset = css`
 
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap');
+    @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
 
-    @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Oswald:wght@200..700&display=swap');
-    
     * {
-        font-family: "Noto Sans KR", sans-serif;
+        font-family: 'Pretendard', sans-serif;
     }
+
         
     html, body, #root{
         width: 100%;
