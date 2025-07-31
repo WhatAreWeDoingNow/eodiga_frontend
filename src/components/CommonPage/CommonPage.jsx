@@ -1,8 +1,8 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react'
+import { useNavigate } from "react-router-dom";
 import MainButton from '../MainButton/MainButton'
 import * as s from './style'
-import { useNavigate } from 'react-router-dom'
 
 function CommonPage({children, text, maxpage, page, setPage}) {
     const navigate = useNavigate();
@@ -10,6 +10,9 @@ function CommonPage({children, text, maxpage, page, setPage}) {
     console.log(page)
     const handlePageUp = () => {
         setPage(page + 1);
+        if(page == maxpage) {
+            navigate('/eodiga')
+        }
     }
 
     const handlePageDown = () => {
