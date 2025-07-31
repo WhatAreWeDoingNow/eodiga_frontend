@@ -9,6 +9,8 @@ function Signin({page, setPage}) {
      const savedEmails = ['user1@example.com', 'user2@example.com', 'admin@company.com'];
   const [email, setEmail] = useState('');
 
+  page = 1; // 수정 전 코드 사용시 페이지수가 누적이 되는 버그가 있어 변수수정으로 해결.
+
   const handleSelectChange = (e) => {
     const selectedEmail = e.target.value;
     if (selectedEmail !== '') {
