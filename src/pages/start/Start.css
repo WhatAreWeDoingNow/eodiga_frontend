@@ -1,25 +1,15 @@
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-  background-color: #fff4f4;
-  font-family: sans-serif;
-}
-
-.start-wrapper {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 200px 40px;
-  box-sizing: border-box;
-}
 
 .start-text {
   text-align: center;
 }
 
 .title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #ff6c6c;
+  margin-bottom: 12px;
+}
+.title2 {
   font-size: 24px;
   font-weight: 700;
   color: #ff6c6c;
@@ -32,18 +22,16 @@ html, body {
   line-height: 1.6;
 }
 
-.button-group {
+.button-group{
   display: flex;
   justify-content: center;
   gap: 24px;
-  margin-bottom: 40px;
 }
-
 .user-button {
   border-radius: 20px;
   padding: 16px;
   text-align: center;
-  width: 120px;
+  width: 130px;
   transition: transform 0.2s ease;
 }
 
@@ -55,15 +43,39 @@ html, body {
 .user-button img {
   width: 100%;
   height: auto;
-  margin-bottom: 12px;
 }
 
 .user-button img:hover {
+  border-radius: 35px;
   background-color: #FFA8A8;
+}
+.img-backcolor{
+  height: 130px;
+  width: 130px;
+  background-color: white;
+  border-radius: 35px;
+  margin-bottom: 10px;
+  box-shadow: 2px 1px 0px 0px #00000059;
+}
+.img-backcolor2{
+  height: 130px;
+  width: 130px;
+  background-color: #FFA8A8;
+  border-radius: 35px;
+  margin-bottom: 10px;
+  border: 2px solid #ff4081;
+  box-shadow: 2px 1px 0px 0px #00000059;
 }
 
 .user-button span {
   display: block;
   font-size: 13px;
   color: #333;
+}
+.box{
+  margin-top: 80px;
+  
+}
+.next-button {
+  background: linear-gradient(to right, #FE76A1, #FF6B6B);
 }
