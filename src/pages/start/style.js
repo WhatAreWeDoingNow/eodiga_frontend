@@ -1,81 +1,87 @@
+// styles.js
+import { css } from '@emotion/react';
 
-.start-text {
+export const start_text = css`
   text-align: center;
-}
+`;
 
-.title {
+export const title = css`
   font-size: 24px;
   font-weight: 700;
   color: #ff6c6c;
   margin-bottom: 12px;
-}
-.title2 {
+`;
+
+export const title2 = css`
   font-size: 24px;
   font-weight: 700;
   color: #ff6c6c;
   margin-bottom: 12px;
-}
+`;
 
-.subtitle {
+export const subtitle = css`
   font-size: 14px;
   color: #cc6666;
   line-height: 1.6;
-}
+`;
 
-.button-group{
+export const button_group = css`
   display: flex;
   justify-content: center;
   gap: 24px;
-}
-.user-button {
+`;
+
+export const user_button = css`
   border-radius: 20px;
   padding: 16px;
   text-align: center;
   width: 130px;
   transition: transform 0.2s ease;
-}
 
-.user-button:hover {
-  transform: translateY(-3px);
-  
-}
+  &:hover {
+    transform: translateY(-3px);
+  }
 
-.user-button img {
-  width: 100%;
-  height: auto;
-}
+  img {
+    width: 100%;
+    height: auto;
+  }
 
-.user-button img:hover {
-  border-radius: 35px;
-  background-color: #FFA8A8;
-}
-.img-backcolor{
+  img:hover {
+    border-radius: 35px;
+    background-color: #ffa8a8;
+  }
+
+  span {
+    display: block;
+    font-size: 13px;
+    color: #333;
+  }
+`;
+
+export const img_backcolor = css`
   height: 130px;
   width: 130px;
   background-color: white;
   border-radius: 35px;
   margin-bottom: 10px;
   box-shadow: 2px 1px 0px 0px #00000059;
-}
-.img-backcolor2{
+`;
+
+export const img_backcolor2 = css`
   height: 130px;
   width: 130px;
-  background-color: #FFA8A8;
+  background-color: #ffa8a8;
   border-radius: 35px;
   margin-bottom: 10px;
   border: 2px solid #ff4081;
   box-shadow: 2px 1px 0px 0px #00000059;
-}
+`;
 
-.user-button span {
-  display: block;
-  font-size: 13px;
-  color: #333;
-}
-.box{
+export const box = css`
   margin-top: 80px;
-  
-}
-.next-button {
-  background: linear-gradient(to right, #FE76A1, #FF6B6B);
-}
+`;
+
+export const next_button = css`
+  background: linear-gradient(to right, #fe76a1, #ff6b6b);
+`;
