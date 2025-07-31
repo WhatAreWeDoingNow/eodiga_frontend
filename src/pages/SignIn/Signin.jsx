@@ -27,6 +27,9 @@ function Signin() {
             <input css={s.input} type="text" placeholder='example@'/>
             <select css={s.select} name="" id="">
                 <option  value="">이메일선택</option>
+                <option  value="">@gmail.com</option>
+                <option  value="">@naver.com</option>
+                <option  value="">@daum.net</option>
             </select>
         </div>
         <button css={s.login_button}>다음</button>

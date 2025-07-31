@@ -8,7 +8,7 @@ function Main() {
   return (
     <>
         <div css={s.Intro_Slide}>
-            <h1>test</h1>
+            <h1>지역을 잇다, 경험을 만들다.</h1>
         </div>
         <button css={s.login_button} onClick={() => navigate('/signin')}>로그인</button>
         <div css={s.select_box}>

@@ -1,6 +1,12 @@
 import { css } from '@emotion/react';
 
 export const Intro_Slide = css`
+    background-image: linear-gradient(to right, #FFA8A8, #FF6B6B);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    font-size: 10px;
    background-color: #FFA8A8;
     padding = 27px;
   padding: 150px 0px;
