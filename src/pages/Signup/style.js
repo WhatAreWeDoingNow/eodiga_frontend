@@ -30,6 +30,7 @@ outline: none;    /* 포커스 시 파란 테두리도 제거 */
 padding-right: 20px;
 color: #333333;
 font-size: 18px;
+width: 400px;
 `
 
 export const select = css`
