@@ -21,6 +21,7 @@ export const inputbox = css`
     border-bottom: 2px solid #ff6b6b; 
     height: 27.5px;
     width: 330px;
+    margin-top: 250px;
 `
 export const input = css`
     background: transparent;
