@@ -12,6 +12,11 @@ function Signin({ page, setPage }) {
 
   const savedEmails = ['user1@example.com', 'user2@example.com', 'admin@company.com'];
   const [email, setEmail] = useState('');
+  const [inputValue, setInputValue] = useState('');
+
+  useEffect(() => {
+      setInputValue('');
+    }, [page]);
 
   const handleSelectChange = (e) => {
     const selectedEmail = e.target.value;
@@ -25,7 +30,7 @@ function Signin({ page, setPage }) {
       <CommonPage text={"다음"} maxpage={2} page={page} setPage={setPage}>
         <Header page={"signin"} index={page} />
         <div css={s.inputbox}>
-          <input css={s.input} type="text" placeholder='example@' />
+          <input css={s.input} type="text" placeholder='example@' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
           <select css={s.select} onChange={handleSelectChange}>
             <option value="">이메일선택</option>
             <option value="">@gmail.com</option>
