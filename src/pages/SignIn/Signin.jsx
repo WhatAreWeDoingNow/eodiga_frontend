@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
 import * as s from './style';
+import CommonPage from '../../components/CommonPage/CommonPage';
+import Header from '../../components/CommonPage/Header/Header';
 
-function Signin() {
+function Signin({page, setPage}) {
      const savedEmails = ['user1@example.com', 'user2@example.com', 'admin@company.com'];
   const [email, setEmail] = useState('');
 
@@ -15,24 +17,21 @@ function Signin() {
   };
   return (
     <>
-        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M17.5001 7L10.5001 14L17.5001 21" stroke="#FE6868" stroke-width="2"/>
-        </svg>
-        <div css={s.start_text}>
-            <p css={s.subtitle}>1/2</p>
-            <h1 css={s.title}>다시 만나게 되어 반가워요!</h1>
-            <p css={s.subtitle}>회원가입 하실때 사용하셨던<br/>이메일을 입력해주세요.</p>
-        </div>
-        <div css={s.inputbox}>
-            <input css={s.input} type="text" placeholder='example@'/>
-            <select css={s.select} name="" id="">
-                <option  value="">이메일선택</option>
-                <option  value="">@gmail.com</option>
-                <option  value="">@naver.com</option>
-                <option  value="">@daum.net</option>
-            </select>
-        </div>
-        <button css={s.login_button}>다음</button>
+        <CommonPage text={"다음"} page={page} setPage={setPage}>
+          <Header
+            page={"signin"}
+            index={page}
+          />
+          <div css={s.inputbox}>
+              <input css={s.input} type="text" placeholder='example@'/>
+              <select css={s.select} name="" id="">
+                  <option  value="">이메일선택</option>
+                  <option  value="">@gmail.com</option>
+                  <option  value="">@naver.com</option>
+                  <option  value="">@daum.net</option>
+              </select>
+          </div>
+        </CommonPage>
     </>
 
     

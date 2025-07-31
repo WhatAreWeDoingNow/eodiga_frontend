@@ -5,7 +5,7 @@ export const start_text = css`
 `
 
 export const title = css`
-    font-size: 24px;
+font-size: 24px;
   font-weight: 700;
   color: #ff6b6b;
   margin-bottom: 12px;

@@ -11,8 +11,10 @@ import Signup from './pages/Signup/Signup';
 
 function App() {
   const [role, setRole] = useState("");
+  const [page, setPage] = useState(1);
 
   console.log(role);
+  console.log(page);
   return (
     <>
     <Global styles={reset}/>
@@ -22,8 +24,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Start role={role} setRole={setRole}/>} />
           <Route path='/eodiga' element={<Main/>}/>
-          <Route path='/signin' element={<Signin/>}/>
-          <Route path='/signup' element={<Signup/>}/>
+          <Route path='/signin' element={<Signin page={page} setPage={setPage}/>}/>
+          <Route path='/signup' element={<Signup page={page} setPage={setPage}/>}/>
         </Routes>
         </MainLayout>
       }/>

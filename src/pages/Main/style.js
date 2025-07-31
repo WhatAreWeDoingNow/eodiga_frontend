@@ -13,19 +13,27 @@ export const Intro_Slide = css`
   width: 393px;
 `;
 
-export const login_button = css`
-    margin-top: 60px;
-    background: linear-gradient(to right, #FE76A1, #FF6B6B);
+export const bottom_bottons = css`
+  position: fixed;
+  bottom: 250px;
+  left: 50%;
+  transform: translateX(-50%);
 `
 
 export const select_box = css`
-    margin: 0px 30px;
+    position: fixed;
+    bottom: 200px;
+    left: 50%;
+    transform: translateX(-50%); 
 `
 export const select_button = css`
     font-size: 15px;
     font-weight: 500;
     background: none;
     color: #333333;
+    background: none;
+    border: none;
+    padding: 0px;  
 `
 export const space = css`
     margin: 0px 60px;
