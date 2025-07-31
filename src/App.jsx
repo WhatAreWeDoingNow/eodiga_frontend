@@ -25,7 +25,7 @@ function App() {
           <Route path='/' element={<Start role={role} setRole={setRole}/>} />
           <Route path='/eodiga' element={<Main/>}/>
           <Route path='/signin' element={<Signin page={page} setPage={setPage}/>}/>
-          <Route path='/signup' element={<Signup page={page} setPage={setPage}/>}/>
+          <Route path='/signup' element={<Signup page={page} setPage={setPage} role={role}/>}/>
         </Routes>
         </MainLayout>
       }/>

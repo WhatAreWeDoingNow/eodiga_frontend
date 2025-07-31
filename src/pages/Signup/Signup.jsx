@@ -5,7 +5,7 @@ import * as s from './style';
 import CommonPage from '../../components/CommonPage/CommonPage';
 import Header from '../../components/CommonPage/Header/Header';
 
-function SignUp({page, setPage}) {
+function SignUp({role, page, setPage}) {
      const savedEmails = ['user1@example.com', 'user2@example.com', 'admin@company.com'];
   const [email, setEmail] = useState('');
 
@@ -17,7 +17,7 @@ function SignUp({page, setPage}) {
   };
   return (
     <>
-        <CommonPage text={"다음"} page={page} setPage={setPage}>
+        <CommonPage text={"다음"} maxpage={role=="user"? 3: 6 }page={page} setPage={setPage}>
           <Header
             page={"signup"}
             index={page}

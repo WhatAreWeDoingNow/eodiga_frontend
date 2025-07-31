@@ -17,7 +17,7 @@ function Signin({page, setPage}) {
   };
   return (
     <>
-        <CommonPage text={"다음"} page={page} setPage={setPage}>
+        <CommonPage text={"다음"} maxpage={2} page={page} setPage={setPage}>
           <Header
             page={"signin"}
             index={page}
