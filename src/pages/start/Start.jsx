@@ -4,6 +4,7 @@ import * as s from './style';
 import ownerImg from '../../assets/owner.png';
 import userImg from '../../assets/user.png';
 import { useNavigate } from 'react-router-dom';
+import MainButton from '../../components/MainButton/MainButton';
 
 function StartPage({ role, setRole }) {
   const navigate = useNavigate();
@@ -65,9 +66,7 @@ function StartPage({ role, setRole }) {
       </div>
 
       {role ? (
-        <button css={s.next_button} onClick={handleNextClick}>
-          다음
-        </button>
+          <MainButton text={"다음"} onClick={handleNextClick}/>
       ) : (
         <div css={s.box}></div>
       )}
