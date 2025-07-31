@@ -5,6 +5,7 @@ import ownerImg from '../../assets/owner.png';
 import userImg from '../../assets/user.png';
 import { useNavigate } from 'react-router-dom';
 import MainButton from '../../components/MainButton/MainButton';
+import Header from '../../components/CommonPage/Header/Header';
 
 function StartPage({ role, setRole }) {
   const navigate = useNavigate();
@@ -20,21 +21,15 @@ function StartPage({ role, setRole }) {
   return (
     <>
       {!role ? (
-        <div css={s.start_text}>
-          <h1 css={s.title}>어디가에 오신걸 환영해요!</h1>
-          <p css={s.subtitle}>
-            어떤 사용자 유형으로 이용하시겠어요?
-            <br />
-            이후에 언제든 변경할 수 있어요.
-          </p>
-        </div>
+        <Header
+          page={"start"}
+          index={1}
+        />
       ) : (
-        <div css={s.start_text}>
-          <h1 css={s.title2}>
-            선택사항이 맞으시다면
-            <br /> 다음버튼을 눌러주세요.
-          </h1>
-        </div>
+       <Header
+          page={"start"}
+          index={2}
+        />
       )}
 
       <div css={s.button_group}>
@@ -66,9 +61,11 @@ function StartPage({ role, setRole }) {
       </div>
 
       {role ? (
+        <div css={s.bottom_bottons}>
           <MainButton text={"다음"} onClick={handleNextClick}/>
+        </div>
       ) : (
-        <div css={s.box}></div>
+        <></>
       )}
     </>
   );

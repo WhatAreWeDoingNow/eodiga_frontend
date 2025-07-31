@@ -29,6 +29,7 @@ export const button_group = css`
   display: flex;
   justify-content: center;
   gap: 24px;
+  margin-top: 150px;
 `;
 
 export const user_button = css`
@@ -85,3 +86,10 @@ export const box = css`
 export const next_button = css`
   background: linear-gradient(to right, #fe76a1, #ff6b6b);
 `;
+
+export const bottom_bottons = css`
+  position: fixed;
+  bottom: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+`
