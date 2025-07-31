@@ -30,10 +30,6 @@ export const main_layout = css`
     height: 743px;
     padding: 0px 30px;
 `
-
-export const bottom_bar = css`
-
-`
 export const bar = css`
     width: 139px;
     padding: 5px 130px;

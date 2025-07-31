@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from 'react'
-import * as s from './sytle'
+import * as s from './style'
 
 function MainLayout({children}) {
   const [time, setTime] = useState("");

@@ -10,7 +10,6 @@ import Signin from './pages/SignIn/Signin';
 import Signup from './pages/Signup/Signup';
 
 function App() {
-  const [count, setCount] = useState(0)
   const [role, setRole] = useState("");
 
   console.log(role);
