@@ -4,7 +4,10 @@ import { css } from '@emotion/react';
 import * as s from './style';
 import CommonPage from '../../components/CommonPage/CommonPage';
 import Header from '../../components/CommonPage/Header/Header';
+import CategorySelect from '../../components/Category'; // 카테고리 컴포넌트 추가
 import { useNavigate } from 'react-router-dom';
+
+const [selectedCategory, setSelectedCategory] = useState(''); // 카테고리 상태정의
 
 const texts = {
   // texts 객체도 SignUp 안에서 접근 가능하도록 선언
@@ -149,6 +152,9 @@ function SignUp({ role, page, setPage }) {
             :
             page == 5?
             <input type="text" css={s.input} style={{width: "100%"}} placeholder={currentPlaceholder}/>
+            :
+            page == 6? // 카테고리 추가했는데 이게 맞는지 모르겠네 삼항 연산자로 쭉 이어주라는데 보고 아닌 거 같으면 수정해죠
+            <CategorySelect selectedCategory={selectedCategory} setSelectedCategory={setSelectedCategory}/>
             :
             <></>
           }
