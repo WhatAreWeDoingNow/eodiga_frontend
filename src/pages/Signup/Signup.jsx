@@ -4,6 +4,7 @@ import { css } from '@emotion/react';
 import * as s from './style';
 import CommonPage from '../../components/CommonPage/CommonPage';
 import Header from '../../components/CommonPage/Header/Header';
+import { useNavigate } from 'react-router-dom';
 
 const texts = {
   // texts 객체도 SignUp 안에서 접근 가능하도록 선언
@@ -18,6 +19,29 @@ const texts = {
 };
 
 function SignUp({ role, page, setPage }) {
+  const navigate = useNavigate();
+  const [text, setText] = useState("");
+  const maxLength = 10;
+
+  const [address, setAddress] = useState('');
+
+  const openPostcode = () => {
+    new window.daum.Postcode({
+      oncomplete: (data) => {
+        setAddress(data.address); // 도로명 주소 저장
+      },
+      onclose: (state) => {
+        // 사용자가 ESC나 취소 버튼 등으로 닫은 경우
+        if (state === 'FORCE_CLOSE') {
+          setAddress(''); // 주소 초기화
+        }
+      },
+      width: 390,
+      height: 780,
+      left: 615, // 원하는 가로 위치
+      top: 150
+    }).open();
+  };
   useEffect(() => {
     setPage(1); // 처음 진입 시에만 초기화
   }, []);
@@ -39,7 +63,95 @@ function SignUp({ role, page, setPage }) {
       <CommonPage text={"다음"} maxpage={role === "user" ? 3 : 6} page={page} setPage={setPage}>
         <Header page={"signup"} index={page} />
         <div css={s.inputbox}>
-          <input css={s.input} type="text" placeholder={currentPlaceholder} />
+          {
+            page == 1? 
+            <>
+              <input 
+                css={s.input}
+                type="text"
+                name='nickname'
+                placeholder={currentPlaceholder}
+                maxLength={maxLength}
+                onChange={(e) => setText(e.target.value)}
+              />
+              <span css={s.line} style={{ color: "#999", paddingLeft: "50px"}}>{text.length} / {maxLength}</span>
+              <div css={s.go_main}>
+              <p>계정이 이미 있으신가요? 
+                <span onClick={() => navigate('/eodiga')}> 메인으로 돌아가기</span>
+              </p>
+            </div>
+            </>
+            :
+            page == 2?
+            <>
+              <input 
+                css={s.input}
+                type="text"
+                name='email'
+                placeholder={currentPlaceholder}
+              />
+              <select css={[s.select, s.line]} onChange={handleSelectChange}>
+                <option value="">이메일선택</option>
+                <option value="">@gmail.com</option>
+                <option value="">@naver.com</option>
+                <option value="">@daum.net</option>
+              </select>
+            </>
+            :
+            page == 3?
+            <>
+            <input 
+              css={s.input}
+              style={{width: "100%"}}
+              type="text"
+              placeholder={currentPlaceholder}
+            />
+            <input 
+              css={[s.input, s.input2]}
+              style={{width: "100%"}}
+              name='password'
+              type="text"
+              placeholder='입력하신 비밀번호를 한번더 입력해주세요.'
+            />
+            </>
+            :
+            page == 4?
+            <>
+              <div
+                css={s.click_adress}
+                value={address}
+                onClick={openPostcode}
+                readOnly
+              >{
+                address != ""?
+                <span style={{marginLeft: "20px"}}>{address}</span>
+                :
+                <>
+                  <svg style={{ position: 'relative', top: 6, left: 3 }} width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="10.0834" cy="10.0833" r="5.5" stroke="#929292" stroke-width="1.04762"/>
+                  <path d="M10.0834 7.33337C9.72224 7.33337 9.36464 7.4045 9.03099 7.54271C8.69735 7.68091 8.39419 7.88347 8.13883 8.13883C7.88347 8.39419 7.68091 8.69735 7.54271 9.03099C7.4045 9.36464 7.33337 9.72224 7.33337 10.0834" stroke="#929292" stroke-width="1.04762" stroke-linecap="round"/>
+                  <path d="M18.3334 18.3333L15.5834 15.5833" stroke="#929292" stroke-width="1.04762" stroke-linecap="round"/>
+                  </svg>
+                  <span style={{marginLeft: "10px", marginBottom: "10px", color: "#aaa", fontSize: "15px"}}>
+                    도로명 주소를 클릭해서 검색하세요
+                  </span>
+                </>
+              }
+              </div>
+                <input 
+                  css={s.input}
+                  style={{width: "100%"}}
+                  name='adress'
+                  type="text"
+                  placeholder='상세주소를 입력해주세요.'
+              />
+              </>
+            :
+            page == 5?
+            <input type="text" css={s.input} style={{width: "100%"}} placeholder={currentPlaceholder}/>
+            :
+            <></>
+          }
         </div>
       </CommonPage>
     </>
