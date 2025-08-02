@@ -5,7 +5,9 @@ import * as s from './style'
 const texts = {
     start: [
         {title: "어디가에 오신걸 환영해요!", title2: "", subtitle: "어떤 사용자 유형으로 이용하시겠어요?", subtitle2: "이후에 언제든 변경할 수 있어요. "},
-        {title: "선택사항이 맞으시다면", title2: "다음버튼을 눌러주세요.", subtitle: "", subtitle2: ""}
+        {title: "선택사항이 맞으시다면", title2: "다음버튼을 눌러주세요.", subtitle: "", subtitle2: ""},
+        {title: "사업자 인증서 확인이 필요해요.", title2: "", subtitle: "", subtitle2: ""}
+
     ],
     signup: [
         {title: "닉네임을 정해볼까요? ", title2: "", subtitle: "닉네임은 언제든지 변경 가능해요.", subtitle2: ""},
@@ -30,7 +32,10 @@ function Header({page, index}) {
     return (
     <div css={s.start_text}>
         <h1 css={s.title}>{title}<br/>{title2}</h1>
-        <p css={s.subtitle}>{subtitle}<br/>{subtitle2}</p>
+        {
+            subtitle != '' &&
+            <p css={s.subtitle}>{subtitle}<br/>{subtitle2}</p>
+        }
     </div>
     )
 }

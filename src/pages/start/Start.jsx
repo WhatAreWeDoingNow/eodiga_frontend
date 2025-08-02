@@ -5,7 +5,7 @@ import ownerImg from '../../assets/owner.png';
 import userImg from '../../assets/user.png';
 import { useNavigate } from 'react-router-dom';
 import MainButton from '../../components/MainButton/MainButton';
-import Header from '../../components/CommonPage/Header/Header';
+import Header from '../../components/Header/Header';
 
 function StartPage({ role, setRole }) {
   const navigate = useNavigate();
@@ -20,53 +20,31 @@ function StartPage({ role, setRole }) {
 
   return (
     <>
-      {!role ? (
-        <Header
-          page={"start"}
-          index={1}
-        />
-      ) : (
-       <Header
-          page={"start"}
-          index={2}
-        />
-      )}
+      <div css={s.header}>
+        <Header page={"start"} index={!role? 1: 2}/>
+      </div>
 
       <div css={s.button_group}>
         <div css={s.user_button} onClick={() => handleRoleClick('owner')}>
-          {role === 'owner' ? (
-            <div css={s.img_backcolor2}>
+            <div css={s.img_backcolor(role=='owner')}>
               <img src={ownerImg} alt="소상공인" />
             </div>
-          ) : (
-            <div css={s.img_backcolor}>
-              <img src={ownerImg} alt="소상공인" />
-            </div>
-          )}
           <span>소상공인으로 시작하기</span>
         </div>
 
         <div css={s.user_button} onClick={() => handleRoleClick('user')}>
-          {role === 'user' ? (
-            <div css={s.img_backcolor2}>
-              <img src={userImg} alt="일반 사용자" />
+          <div css={s.img_backcolor(role=='user')}>
+              <img src={userImg} alt="소상공인" />
             </div>
-          ) : (
-            <div css={s.img_backcolor}>
-              <img src={userImg} alt="일반 사용자" />
-            </div>
-          )}
           <span>일반 사용자로 시작하기</span>
         </div>
       </div>
-
-      {role ? (
+      {
+        role &&
         <div css={s.bottom_bottons}>
           <MainButton text={"다음"} onClick={handleNextClick}/>
         </div>
-      ) : (
-        <></>
-      )}
+      }
     </>
   );
 }
