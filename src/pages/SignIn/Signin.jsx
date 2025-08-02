@@ -3,7 +3,9 @@ import React, { useState, useEffect } from 'react'
 import { css } from '@emotion/react';
 import * as s from './style';
 import CommonPage from '../../components/CommonPage/CommonPage';
-import Header from '../../components/CommonPage/Header/Header';
+import Header from '../../components/Header/Header';
+import Email from '../../components/Input/Email/Email';
+import Password from '../../components/Input/Password/Password';
 
 function Signin({ page, setPage }) {
   useEffect(() => {
@@ -29,15 +31,14 @@ function Signin({ page, setPage }) {
     <>
       <CommonPage text={"다음"} maxpage={2} page={page} setPage={setPage}>
         <Header page={"signin"} index={page} />
-        <div css={s.inputbox}>
-          <input css={s.input} type="text" placeholder='example@' value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-          <select css={s.select} onChange={handleSelectChange}>
-            <option value="">이메일선택</option>
-            <option value="">@gmail.com</option>
-            <option value="">@naver.com</option>
-            <option value="">@daum.net</option>
-          </select>
-        </div>
+        {
+          page == 1 &&
+          <Email inputValue={inputValue} setInputValue={setInputValue} onChange={handleSelectChange}/>
+        }
+        {
+          page == 2 &&
+          <Password/>
+        }
       </CommonPage>
     </>
   )

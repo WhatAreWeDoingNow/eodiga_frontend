@@ -12,8 +12,9 @@ import Signup from './pages/Signup/Signup';
 function App() {
   const [role, setRole] = useState("");
   const [page, setPage] = useState(1);
+  const [ischeck, setIscheck] = useState(false);
 
-  console.log(role);
+  console.log(role == 'user');
   console.log(page);
   return (
     <>
@@ -23,7 +24,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path='/' element={<Start role={role} setRole={setRole}/>} />
-          <Route path='/eodiga' element={<Main/>}/>
+          <Route path='/eodiga' element={<Main role={role} ischeck={ischeck} setIscheck={setIscheck}/>}/>
           <Route path='/signin' element={<Signin page={page} setPage={setPage}/>}/>
           <Route path='/signup' element={<Signup page={page} setPage={setPage} role={role}/>}/>
         </Routes>

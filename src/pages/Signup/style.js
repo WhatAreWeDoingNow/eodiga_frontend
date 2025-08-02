@@ -17,22 +17,12 @@ export const subtitle = css`
   line-height: 1.6;
 `
 
+
 export const inputbox = css`
     height: 27.5px;
-    margin-top: 250px;
-`
-export const input = css`
-    background: transparent;
-    border: none;     /* 경계선도 없애고 싶을 때 */
-    outline: none;    /* 포커스 시 파란 테두리도 제거 */
-    color: #333333;
-    font-size: 18px;
-    padding-bottom: 5px;
+    width: 100%;
+    margin-top: auto;
     border-bottom: 2px solid #ff6b6b;
-    ::placeholder {
-        font-size: 15px;
-        color: #aaa;
-    }
 `
 export const line = css`
     padding-bottom: 5.5px;
