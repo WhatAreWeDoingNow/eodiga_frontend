@@ -20,7 +20,7 @@ function Signin({ page, setPage }) {
 
   const savedUsers = [
   { name: '안성해', email: 'ahshss903@naver.com', password: 'test' },
-  { name: '김정현', email: 'user2@example.com', password: 'test1' },
+  { name: '김정현', email: 'kimjh597@naver.com', password: 'test1' },
   { name: '김영택', email: 'admin@company.com', password: 'test2' },
 ];
 
@@ -56,7 +56,7 @@ useEffect(() => {
 
   if (user) {
     console.log('유저닉네임:', user.name);
-    navigate('/eodiga');
+    navigate('/main/home');
   } else {
     alert('이메일 또는 비밀번호가 잘못되었습니다.');
   }
