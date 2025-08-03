@@ -75,7 +75,7 @@ const handleNext = async () => {
       }
 
       // 성공 시 이동
-      navigate('/eodiga');
+      navigate('/home');
     } catch (error) {
       console.error('회원가입 요청 실패:', error.message);
       alert(error.message || '회원가입 도중 오류가 발생했습니다.');
