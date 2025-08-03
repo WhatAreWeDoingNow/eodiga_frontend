@@ -50,29 +50,40 @@ function SignUp({ role, page, setPage }) {
   }, [password, passwordConfirm]);
 
   // 다음 버튼 클릭 시
-  const handleNext = () => {
-    if (page == maxLength) {
-      console.log({
-      nickname,
-      email,
-      password,
-      address,
-      phone,
-      category: {
-        top: selectedTopCategory,
-        sub: selectedSubCategory,
-      },
-    });
-    }
-    
+  // 다음 버튼 클릭 시
+const handleNext = async () => {
+  if (page === maxLength) {
+    try {
+      const response = await fetch('http://localhost/api/v1/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          username: nickname,
+          role: role,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
 
-    // 페이지 이동
-    if (page < maxLength) {
-      setPage(page + 1);
-    } else {
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.message || '회원가입에 실패했습니다.');
+      }
+
+      // 성공 시 이동
       navigate('/eodiga');
+    } catch (error) {
+      console.error('회원가입 요청 실패:', error.message);
+      alert(error.message || '회원가입 도중 오류가 발생했습니다.');
     }
-  };
+  } else {
+    setPage(page + 1);
+  }
+};
+
 
   return (
     <>
