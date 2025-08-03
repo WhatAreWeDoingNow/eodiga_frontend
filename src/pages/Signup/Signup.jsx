@@ -53,6 +53,7 @@ function SignUp({ role, page, setPage }) {
   // 다음 버튼 클릭 시
 const handleNext = async () => {
   if (page === maxLength) {
+    console.log("EMAIL - " + email , "PASSWORD - " + password , "USERNAME - " + nickname, "ROLE - " + role)
     try {
       const response = await fetch('http://localhost/api/v1/auth/register', {
         method: 'POST',
