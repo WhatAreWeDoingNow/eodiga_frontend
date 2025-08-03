@@ -96,9 +96,11 @@ const handleNext = async () => {
         onNext={handleNext}
       >
         <Header page={"signup"} index={page} />
-
+        
         {page === 1 && (
-          <Nickname value={nickname} setValue={setNickname} />
+          <>
+           <Nickname value={nickname} setValue={setNickname} />
+          </>
         )}
 
         {page === 2 && (

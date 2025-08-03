@@ -8,7 +8,6 @@ export const container = css`
     height: 100vh;
     box-sizing: border-box;
     background-color: #000000;
-    overflow: hidden;
 `
 
 export const layout = css`
@@ -17,25 +16,18 @@ export const layout = css`
     justify-content: center;
     width: 400px;
     height: 850px;
+    padding: 0px 30px;
     box-sizing: border-box;
     background-color: #FFF5F5;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid #dbdbdb;
 `
 
 export const top_bar = css`
-  height: 50px;
-  background-color: transparent;
-  position: absolute;    /* phone-layout 안에서 고정 */
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-}
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0px;
 `
 
 export const icons = css`
@@ -51,25 +43,15 @@ export const main_layout = css`
     display: flex;
     flex-direction: column;
     height: 100vh;
-    width: 400px;
+    width: 100%;
+    box-sizing: border-box;
     flex: 1;
+    position: relative;
 `
 export const bar = css`
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 62px;
-    padding: 8px 30px;
-    justify-content: space-between;
-`
-
-export const bottom_icons = css`
-    height: 62px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    p{
-        margin: 0px;
-    }
+    box-sizing: border-box;;
+    padding-bottom: 5px;
 `
