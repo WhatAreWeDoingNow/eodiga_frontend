@@ -7,7 +7,7 @@ function Password({mode}) {
     <div css={s.layout}>
         <div css={s.inputbox}>
             <input 
-                type="text"
+                type="password"
                 placeholder='영문/숫자/특수문자 중, 2가지 이상 포함해주세요. '
             />
         </div>
@@ -15,7 +15,7 @@ function Password({mode}) {
             mode && 
             <div css={s.inputbox}>
                 <input 
-                    type="text"
+                    type="password"
                     placeholder='입력하신 비밀번호를 한번더 입력해주세요.'
                 />
             </div>
