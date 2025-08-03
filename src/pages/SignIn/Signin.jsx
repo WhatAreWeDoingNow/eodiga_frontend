@@ -18,32 +18,51 @@ function Signin({ page, setPage }) {
 
   const maxLength = 2; // 최대 페이지 수
 
-  const savedEmails = ['user1@example.com', 'user2@example.com', 'admin@company.com'];
+  const savedUsers = [
+  { name: '안성해', email: 'ahshss903@naver.com', password: 'test' },
+  { name: '김정현', email: 'user2@example.com', password: 'test1' },
+  { name: '김영택', email: 'admin@company.com', password: 'test2' },
+];
+
   const [selectedDomain, setSelectedDomain] = useState('');
   const [email, setEmail] = useState('');
   const [inputValue, setInputValue] = useState('');
   const [password, setPassword] = useState('');
+  const [fullEmail, setFullEmail] = useState('');
 
+useEffect(() => {
+  if (selectedDomain === 'custom' || selectedDomain === '') {
+    setFullEmail(inputValue);
+  } else {
+    setFullEmail(inputValue + selectedDomain);
+  }
+}, [inputValue, selectedDomain]);
 
-  useEffect(() => {
-      setInputValue('');
-    }, [page]);
-
-  const handleSelectChange = (e) => {
-    const selectedEmail = e.target.value;
-    if (selectedEmail !== '') {
-      setEmail(selectedEmail);
-    }
-  };
 
   const handleNext = () => {
-    // 페이지 이동
-    if (page < maxLength) {
-      setPage(page + 1);
-    } else {
-      navigate('/eodiga');
-    }
-  };
+  if (page < maxLength) {
+    setPage(page + 1);
+    return;
+  }
+
+  const fullEmail = (selectedDomain === 'custom' || selectedDomain === '')
+    ? inputValue
+    : inputValue + selectedDomain;
+
+  const user = savedUsers.find(u => u.email === fullEmail && u.password === password);
+
+  console.log('입력된 이메일:', fullEmail);
+  console.log('입력된 비밀번호:', password);
+
+  if (user) {
+    console.log('유저닉네임:', user.name);
+    navigate('/eodiga');
+  } else {
+    alert('이메일 또는 비밀번호가 잘못되었습니다.');
+  }
+};
+
+
 
   return (
     <>
@@ -51,7 +70,12 @@ function Signin({ page, setPage }) {
         <Header page={"signin"} index={page} />
         {
           page == 1 &&
-          <Email inputValue={inputValue} setInputValue={setInputValue} setSelectedDomain={setSelectedDomain} onChange={handleSelectChange}/>
+          <Email
+    inputValue={inputValue}
+    setInputValue={setInputValue}
+    selectedDomain={selectedDomain}
+    setSelectedDomain={setSelectedDomain}
+  />
         }
         {
           page == 2 &&
