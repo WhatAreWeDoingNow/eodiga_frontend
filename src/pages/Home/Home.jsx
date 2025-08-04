@@ -10,10 +10,13 @@ function Home () {
 
     return (
         <div css={s.test}>
-            <MainInput />
+            <div>
+                <MainInput />
+            </div>
             <span css={s.userName}>{userName}님, 반가워요! 어디가에서 즐거운 여행 되세요</span>
         </div>
     );
+
 }
 
 export default Home;

@@ -23,8 +23,7 @@ export const layout = css`
     overflow: hidden;
 `
 
-export const top_bar = css`
-  height: 50px;
+export const top_layout = css`
   background-color: transparent;
   position: absolute;    /* phone-layout 안에서 고정 */
   top: 0;
@@ -32,10 +31,14 @@ export const top_bar = css`
   right: 0;
   z-index: 10;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 16px;
-}
+  flex-direction: column;
+`
+
+export const top_bar = css`
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    margin-bottom: 20px;
 `
 
 export const icons = css`
@@ -44,12 +47,22 @@ export const icons = css`
 `
 
 export const time = css`
+    margin: 0;
     font-weight: 590;
     font-size: 17px;
 `
+
+export const main_bar = css`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 16px;
+    p{
+        margin: 0px;
+    }
+`
 export const main_layout = css`
     display: flex;
-    flex-direction: column;
     height: 100vh;
     width: 400px;
     flex: 1;
