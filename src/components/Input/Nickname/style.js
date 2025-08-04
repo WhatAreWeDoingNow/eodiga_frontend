@@ -6,6 +6,7 @@ export const inputbox = css`
     margin-top: auto;
     border-bottom: 2px solid #ff6b6b;
     display: flex;
+    justify-conten:
 `
 export const go_main = css`
     margin-top: 10px;

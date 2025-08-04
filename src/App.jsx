@@ -4,11 +4,13 @@ import { BrowserRouter, Routes,Route } from'react-router-dom';
 import Start from './pages/start/Start';
 import { Global } from '@emotion/react';
 import { reset } from './Global/global';
-import MainLayout from './components/MainLayout/MainLayout';
 import Main from './pages/Main/Main';
 import Signin from './pages/SignIn/Signin';
 import Signup from './pages/Signup/Signup';
 import Home from './pages/Home/Home';
+import AuthLayout from './components/AuthLayout/AuthLayout';
+import MainLayout from './components/MainLayout/MainLayout';
+
 
 function App() {
   const [role, setRole] = useState("");
@@ -21,17 +23,24 @@ function App() {
     <>
     <Global styles={reset}/>
     <Routes>
-      <Route path='/*' element={
+      <Route path='/main/*' element={
       <MainLayout>
+        <Routes>
+          <Route path='/home' element={<Home page={page} setPage={setPage}/>}/>
+        </Routes>
+        </MainLayout>
+      }/>
+      <Route path='/*' element={
+      <AuthLayout>
         <Routes>
           <Route path='/' element={<Start role={role} setRole={setRole}/>} />
           <Route path='/eodiga' element={<Main role={role} ischeck={ischeck} setIscheck={setIscheck}/>}/>
           <Route path='/signin' element={<Signin page={page} setPage={setPage}/>}/>
           <Route path='/signup' element={<Signup page={page} setPage={setPage} role={role}/>}/>
-          <Route path='/home' element={<Home page={page} setPage={setPage}/>}/>
         </Routes>
-        </MainLayout>
+        </AuthLayout>
       }/>
+
       </Routes>
       </>
   )

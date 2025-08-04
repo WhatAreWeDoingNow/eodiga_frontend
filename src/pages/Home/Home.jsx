@@ -1,14 +1,16 @@
+/** @jsxImportSource @emotion/react */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import Card from "../../components/CardPage/CardPage";
-// MainButton import 필요 없다면 제거
-// import MainButton from "../../components/MainButton/MainButton";
+import * as s from './style';
 
-function Home () {
+
+function Home ({}) {
     const navigate = useNavigate();
 
     return (
-        <Card title="TEST" describe="TEST!" />
+          <div css={s.test}>
+
+          </div>
     );
 }
 
