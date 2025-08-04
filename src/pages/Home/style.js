@@ -15,3 +15,17 @@ export const userName = css`
     margin-left: 25px;
     font-size: 14px;
 `
+
+export const adultButton = css`
+    display: flex;
+    gap: 12px;
+`
+
+export const timeButton = css`
+    display: flex;
+    gap: 12px;    
+`
+
+export const cal = css`
+    margin-top: 4000px;
+`
