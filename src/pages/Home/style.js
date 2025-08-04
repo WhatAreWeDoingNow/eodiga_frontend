@@ -6,6 +6,7 @@ export const test = css`
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0px 16px;
    `
 
 export const userName = css`
