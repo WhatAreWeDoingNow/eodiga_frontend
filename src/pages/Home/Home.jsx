@@ -68,7 +68,7 @@ const aiRecommendedPlaces = [
 
     const handleMoreClcik = () => {
         { /* 더보기 연결 */ }
-        navigate('/More');
+        navigate('/main/more');
     };
 
     return (
@@ -94,7 +94,7 @@ const aiRecommendedPlaces = [
                 <div>
                     <div css={s.bottom_text}>
                         <p>지역 핫플 추천</p>
-                        <p>더보기
+                        <p onClick={() => handleMoreClcik()}>더보기
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.625 3.75L9.375 7.5L5.625 11.25" stroke="#FF6B6B" stroke-width="1.25" />
                             </svg>
