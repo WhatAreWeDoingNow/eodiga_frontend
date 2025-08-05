@@ -13,6 +13,5 @@ export const userName = css`
     margin-top: 47%;
     font-size: 20px;
     color: #333;
-    margin-left: 20px;
     font-size: 14px;
 `
