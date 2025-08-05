@@ -8,6 +8,10 @@ function Home () {
     const navigate = useNavigate();
     const userName = localStorage.getItem('userName');
 
+    const handleMoreClcik = () => { { /* 더보기 연결 */}
+        navigate('/More');
+    };
+
     return (
         <div css={s.test}>
             <div>
