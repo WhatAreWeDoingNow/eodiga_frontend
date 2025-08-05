@@ -10,6 +10,8 @@ import Signup from './pages/Signup/Signup';
 import Home from './pages/Home/Home';
 import AuthLayout from './components/AuthLayout/AuthLayout';
 import MainLayout from './components/MainLayout/MainLayout';
+import ReservationFinish from './pages/ReservationFinish/ReservationFinish';
+import Mileage from './pages/Mileage/Mileage';
 
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path='/home' element={<Home page={page} setPage={setPage}/>}/>
+          <Route path='/ReservationFinish' element={<ReservationFinish page={page} setPage={setPage} />} />
+          <Route path='/mileage' element={<Mileage page={page} setPage={setPage} />} />
         </Routes>
         </MainLayout>
       }/>
