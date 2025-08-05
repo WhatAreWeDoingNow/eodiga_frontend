@@ -9,9 +9,66 @@ function Home() {
     const navigate = useNavigate();
     const userName = localStorage.getItem('userName');
 
+    const hotPlaces = [
+  {
+    name: "해운대 해수욕장",
+    address: "부산 해운대구 우동",
+    star: 4.8,
+    imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSKd0I2Pa662z_JpYd088cSTGPUYRIwFXqCHliL0M9MwJQRaKLLuyPYK6PSBkUYDbftJQoT7vWtjumKURSZR9kTmH-Z6odHAQmkg326VUET1A"
+  },
+  {
+    name: "광안리 해수욕장",
+    address: "부산 수영구 광안동",
+    star: 4.7,
+    imageUrl: "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTyEj_lISHiD1oZADBo2JH_34m7PRcPYYbp7nUePiEivQ6qJZLIwWkMf8T8qA5GDEctSGICODBYzQteoxmSE1tIpgOHcHGHc7G7QR_cdWBm"
+  },
+  {
+    name: "경성대학교",
+    address: "부산 남구 대연동",
+    star: 4.6,
+    imageUrl: "https://busan.grandculture.net/ImageView.aspx?fi=GC042P10903&t=middle&ext=jpg&iwm=1"
+  },
+  {
+    name: "연암공과대학교",
+    address: "경상남도 진주시 가좌동",
+    star: 4.5,
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBfqip3FuB7GND8p4r9mWhzGism2sj1iBhIQ&s"
+  },
+  {
+    name: "동의과학대학교",
+    address: "부산 부산진구 양정동",
+    star: 4.4,
+    imageUrl: "https://i.namu.wiki/i/6eFlgu98sYJt7QATEiZDdGDBTZLBBlZAnqG83-TXJbHQABXgFI6UQ6whPp3gL1kKEzgshVNdTKH6q9JA2YB68w.webp"
+  }
+];
+
+const aiRecommendedPlaces = [
+  {
+    name: "부산타워",
+    imageUrl: "https://i.namu.wiki/i/AUpk8QHygUJremQinbr7w6YT4BochQWlBBJ-UwY-WWjZ4_5l6-jjIkT7GT-Xd_EtMjzVdpus3HBemhyNlbEH4w.webp"
+  },
+  {
+    name: "국제시장",
+    imageUrl: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVkkzPGQy5SBCVULYWee3FinB-YDbdAIc9_w&s"
+  },
+  {
+    name: "자갈치시장",
+    imageUrl: "https://www.visitbusan.net/uploadImgs/files/cntnts/20191230201109126_oen"
+  },
+  {
+    name: "동백섬",
+    imageUrl: "https://i.namu.wiki/i/9Tf0PYttkfb7WRSMXx8E1WlSxc_1m2IB0py8Pb902_QLgCLOtpeKMPkUI_5qy4WCl_9OZrX-0LtyHW8vpp2kmg.webp"
+  },
+  {
+    name: "영화의전당",
+    imageUrl: "https://i.namu.wiki/i/M6hYIB0SChqpwlqwukRoUegO2z2e_xPqLomcmNuhOJxwX1_6d9R5-Jeq6utO6xFUMxaafABn0dLN0vykhamZUg.webp"
+  }
+];
+
+
     const handleMoreClcik = () => {
         { /* 더보기 연결 */ }
-        navigate('/More');
+        navigate('/main/more');
     };
 
     return (
@@ -37,79 +94,79 @@ function Home() {
                 <div>
                     <div css={s.bottom_text}>
                         <p>지역 핫플 추천</p>
-                        <p>더보기
+                        <p onClick={() => handleMoreClcik()}>더보기
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.625 3.75L9.375 7.5L5.625 11.25" stroke="#FF6B6B" stroke-width="1.25" />
                             </svg>
                         </p>
                     </div>
                     <div css={s.place_layout}>
-                        {[...Array(5)].map((_, i) => (
-                            <div key={i} css={s.place_list(100)}>
-                                <div css={s.list_img('https://image.8dogam.com/resized/product/asset/v1/upload/0e338fa5717d49ec803b308721443ebe.jpg?type=big&res=2x&ext=webp')}>
-                                    <p>test</p>
-                                </div>
-                                <p css={s.location}>주소</p>
-                                <p css={s.star}>⭐️ 4.4</p>
+                        {hotPlaces.map((place, i) => (
+                        <div key={i} css={s.place_list(100)}>
+                            <div css={s.list_img(place.imageUrl)}>
+                                <p>{place.name}</p>
                             </div>
-                        ))}
-                    </div>
+                            <p css={s.location}>{place.address}</p>
+                            <p css={s.star}>⭐️ {place.star}</p>
+                            </div>
+                                ))}
+                            </div>
                 </div>
                 <div>
                     <p>카테고리</p>
                     <div css={s.buttons}>
                         <div css={s.categorys}>
-                            <button></button>
+                            <button><img src='../../src/assets/heart.png' /></button>
                             <p>연인과</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/baby.png' /></button>
+                            <p>아기와</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/paw.png' /></button>
+                            <p>반려동물과</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/shortcake.png' /></button>
+                            <p>디저트 · 카페</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/dancing.png' /></button>
+                            <p>공연 · 문화체험</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/nail.png' /></button>
+                            <p>뷰티 · 미용</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/fortune.png' /></button>
+                            <p>소품샵 · 잡화점</p>
                         </div>
 
                         <div css={s.categorys}>
-                            <button></button>
-                            <p>연인과</p>
+                            <button><img src='../../src/assets/bone.png' /></button>
+                            <p>체험 · 놀거리</p>
                         </div>
                     </div>
                 </div>
                 <div>
                     <p>AI가 {userName}님을 위해 추천해드리는 관광지에요!</p>
                     <div css={s.place_layout}>
-                        {[...Array(5)].map((_, i) => (
-                            <div key={i} css={s.place_list(167)}>
-                                <div css={s.list_img('https://image.8dogam.com/resized/product/asset/v1/upload/0e338fa5717d49ec803b308721443ebe.jpg?type=big&res=2x&ext=webp')}>
-                                    <p>test</p>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
+  {aiRecommendedPlaces.map((place, i) => (
+    <div key={i} css={s.place_list(167)}>
+      <div css={s.list_img(place.imageUrl)}>
+        <p>{place.name}</p>
+      </div>
+    </div>
+  ))}
+</div>
                 </div>
             </div>
         </div>
