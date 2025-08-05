@@ -1,9 +1,10 @@
 /** @jsxImportSource @emotion/react */
 import React, { useEffect, useState } from 'react'
 import * as s from './style'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 function MainLayout({ children }) {
+  const navigate = useNavigate();
   const [time, setTime] = useState("");
   const location = useLocation().pathname.replace(/^\/main\//, '');
 
@@ -59,7 +60,7 @@ function MainLayout({ children }) {
           {children}
         </main>
         <footer css={s.bar}>
-          <div css={s.bottom_icons} onClick={() => console.log("TEST DUMMY")}>
+          <div css={s.bottom_icons} onClick={() => navigate('/main/home')}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6.25006 15.9494C6.25006 14.2522 6.25006 13.4036 6.59314 12.6577C6.93621 11.9118 7.58052 11.3595 8.86913 10.255L10.1191 9.18358C12.4483 7.18717 13.6128 6.18896 15.0001 6.18896C16.3873 6.18896 17.5518 7.18717 19.881 9.18358L21.131 10.255C22.4196 11.3595 23.0639 11.9118 23.407 12.6577C23.7501 13.4036 23.7501 14.2522 23.7501 15.9494V21.2499C23.7501 23.6069 23.7501 24.7855 23.0178 25.5177C22.2856 26.2499 21.1071 26.2499 18.7501 26.2499H11.2501C8.89304 26.2499 7.71453 26.2499 6.98229 25.5177C6.25006 24.7855 6.25006 23.6069 6.25006 21.2499V15.9494Z" stroke={location == 'home' ? '#FF6B6B' : '#33363F'} stroke-width="1.04167" />
               <path d="M18.1251 26.25V19.7917C18.1251 19.2164 17.6587 18.75 17.0834 18.75H12.9167C12.3414 18.75 11.8751 19.2164 11.8751 19.7917V26.25" stroke={location == 'home' ? '#FF6B6B' : '#33363F'} stroke-width="1.04167" stroke-linecap="round" stroke-linejoin="round" />
@@ -67,7 +68,7 @@ function MainLayout({ children }) {
             <p style={{ color: location === 'home' ? '#FF6B6B' : '' }}>홈</p>
 
           </div>
-          <div css={s.bottom_icons}>
+          <div css={s.bottom_icons} onClick={() => navigate('/main/quest')}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="13.75" cy="13.75" r="8.75" stroke={location == 'quest' ? '#FF6B6B' : '#33363F'} stroke-width="1.04" />
               <path d="M13.7501 10C13.2576 10 12.77 10.097 12.315 10.2855C11.86 10.4739 11.4466 10.7501 11.0984 11.0983C10.7502 11.4466 10.474 11.86 10.2855 12.3149C10.0971 12.7699 10.0001 13.2575 10.0001 13.75" stroke={location == 'quest' ? '#FF6B6B' : '#33363F'} stroke-width="1.04" stroke-linecap="round" />
@@ -75,7 +76,7 @@ function MainLayout({ children }) {
             </svg>
             <p style={{ color: location === 'quest' ? '#FF6B6B' : '' }}>탐색</p>
           </div>
-          <div css={s.bottom_icons}>
+          <div css={s.bottom_icons} onClick={() => navigate('/main/reservation')}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="15" cy="16.25" r="8.75" stroke={location == 'reservation' ? '#FF6B6B' : '#33363F'} />
               <path d="M6.25 6.25L3.75 8.75" stroke={location == 'reservation' ? '#FF6B6B' : '#33363F'} stroke-linecap="round" />
@@ -84,7 +85,7 @@ function MainLayout({ children }) {
             </svg>
             <p style={{ color: location === 'reservation' ? '#FF6B6B' : '' }}>예약</p>
           </div>
-          <div css={s.bottom_icons}>
+          <div css={s.bottom_icons} onClick={() => navigate('/main/mileage')}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.75012 13.125C3.75012 12.3515 3.75012 11.9648 3.84246 11.6493C4.0621 10.8988 4.64896 10.312 5.39943 10.0923C5.71493 10 6.10166 10 6.87512 10H23.1251C23.8986 10 24.2853 10 24.6008 10.0923C25.3513 10.312 25.9381 10.8988 26.1578 11.6493C26.2501 11.9648 26.2501 12.3515 26.2501 13.125V14.375C26.2501 15.4105 25.4107 16.25 24.3751 16.25V16.25C23.3396 16.25 22.5001 17.0895 22.5001 18.125V20.625C22.5001 22.5819 22.5001 23.5603 21.9418 24.2063C21.8691 24.2903 21.7905 24.369 21.7064 24.4416C21.0604 25 20.082 25 18.1251 25H11.8751C9.91826 25 8.93982 25 8.29384 24.4416C8.20979 24.369 8.13113 24.2903 8.05848 24.2063C7.50012 23.5603 7.50012 22.5819 7.50012 20.625V18.125C7.50012 17.0895 6.66066 16.25 5.62512 16.25V16.25C4.58959 16.25 3.75012 15.4105 3.75012 14.375V13.125Z" stroke={location == 'mileage' ? '#FF6B6B' : '#33363F'} />
               <path d="M6.25012 16.25H23.7501" stroke={location == 'mileage' ? '#FF6B6B' : '#33363F'} stroke-linecap="round" />
@@ -95,7 +96,7 @@ function MainLayout({ children }) {
 
             <p style={{ color: location === 'mileage' ? '#FF6B6B' : '' }}>마일리지</p>
           </div>
-          <div css={s.bottom_icons}>
+          <div css={s.bottom_icons} onClick={() => navigate('/main/my')}>
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
               <circle cx="15" cy="10" r="4.5" stroke={location == 'my' ? '#FF6B6B' : '#33363F'} stroke-linecap="round" />
               <path d="M5.90054 21.8423C6.75411 17.9036 10.471 16.875 14.5012 16.875H15.4988C19.529 16.875 23.2459 17.9036 24.0995 21.8423V21.8423C24.2934 22.7373 23.6326 24.375 22.7167 24.375H7.2833C6.36745 24.375 5.70656 22.7373 5.90054 21.8423V21.8423Z" stroke={location == 'my' ? '#FF6B6B' : '#33363F'} stroke-linecap="round" />

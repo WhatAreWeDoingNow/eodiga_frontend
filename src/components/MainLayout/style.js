@@ -64,6 +64,7 @@ export const main_layout = css`
     display: flex;
     height: 100vh;
     width: 400px;
+    box-sizing: border-box;
     flex: 1;
 `
 export const bar = css`

@@ -8,4 +8,5 @@ export const button = css`
     border: none;
     cursor: pointer;
     background: linear-gradient(to right, #fe76a1, #ff6b6b);
+    color: #FFFFFF;
 `

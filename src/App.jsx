@@ -13,6 +13,7 @@ import MainLayout from './components/MainLayout/MainLayout';
 import ReservationFinish from './pages/ReservationFinish/ReservationFinish';
 import Mileage from './pages/Mileage/Mileage';
 import Setting from './pages/Setting/Setting';
+import More from './pages/More/More';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <MainLayout>
         <Routes>
           <Route path='/home' element={<Home page={page} setPage={setPage}/>}/>
+          <Route path='/more' element={<More/>}/>
           <Route path='/ReservationFinish' element={<ReservationFinish page={page} setPage={setPage} />} />
           <Route path='/mileage' element={<Mileage page={page} setPage={setPage} />} />
           <Route path='/setting' element={<Setting page={page} setPage={setPage} />} />
