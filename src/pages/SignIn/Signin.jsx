@@ -57,6 +57,7 @@ useEffect(() => {
   if (user) {
     console.log('유저닉네임:', user.name);
     localStorage.setItem('userName', user.name);
+    localStorage.setItem('userMail', user.fullEmail);
     navigate('/main/home');
   } else {
     alert('이메일 또는 비밀번호가 잘못되었습니다.');
