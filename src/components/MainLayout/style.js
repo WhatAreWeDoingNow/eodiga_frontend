@@ -37,8 +37,7 @@ export const top_layout = css`
 export const top_bar = css`
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
-    margin-bottom: 20px;
+    padding: 17px 30px;
 `
 
 export const icons = css`
