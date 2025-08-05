@@ -10,9 +10,8 @@ export const test = css`
    `
 
 export const userName = css`
-    margin-top: 50%;
+    margin-top: 47%;
     font-size: 20px;
     color: #333;
-    margin-left: 25px;
     font-size: 14px;
 `

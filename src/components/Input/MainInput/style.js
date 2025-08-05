@@ -2,7 +2,7 @@ import { css } from '@emotion/react';
 
 export const inputbox = css`
     position: absolute;
-    top: 20%;
+    top: 17%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 46px;
