@@ -22,7 +22,7 @@ function Setting () {
 
             <div css={s.inputWrapper}>
                 <p css={s.label}>비밀번호 변경</p>
-                <a css={s.input1}>> </a>
+                <a css={s.input1}> </a>
             </div>
         </div>
     );

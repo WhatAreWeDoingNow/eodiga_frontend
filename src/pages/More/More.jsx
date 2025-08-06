@@ -1,9 +1,11 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react'
 import * as s from './style'
+import { useNavigate } from 'react-router-dom'
 
 
 function More() {
+    const navigate = useNavigate();
     return (
         <div css={s.container}>
             <div>
@@ -21,7 +23,7 @@ function More() {
                 {[...Array(5)].map((_, i) => (
                 <div css={s.list_box}>
                     <div css={s.list_top}>
-                        <img src="../../../src/assets/image.png" alt="" css={s.img} />
+                        <img src="../../../src/assets/list_img.png" alt="" css={s.img} />
                         <div css={s.text_box}>
                             <p style={{ color: '#929292' }}>공예 - 도자기</p>
                             <h1 style={{ color: '#FF6B6B' }}>기장 달빛 공방</h1>
@@ -76,7 +78,7 @@ function More() {
                         </div>
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <button css={s.more_button}>자세히 보기</button>
+                        <button css={s.more_button} onClick={() => navigate('/main/detail')}>자세히 보기</button>
                     </div>
                 </div>
                  ))}

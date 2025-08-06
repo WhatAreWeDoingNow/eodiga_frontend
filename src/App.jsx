@@ -14,6 +14,7 @@ import ReservationFinish from './pages/ReservationFinish/ReservationFinish';
 import Mileage from './pages/Mileage/Mileage';
 import Setting from './pages/Setting/Setting';
 import More from './pages/More/More';
+import Detail from './pages/Detail/Detail';
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
         <Routes>
           <Route path='/home' element={<Home page={page} setPage={setPage}/>}/>
           <Route path='/more' element={<More/>}/>
+          <Route path='/detail' element={<Detail/>}/>
           <Route path='/ReservationFinish' element={<ReservationFinish page={page} setPage={setPage} />} />
           <Route path='/mileage' element={<Mileage page={page} setPage={setPage} />} />
           <Route path='/setting' element={<Setting page={page} setPage={setPage} />} />
