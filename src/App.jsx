@@ -16,6 +16,7 @@ import Setting from './pages/Setting/Setting';
 import More from './pages/More/More';
 import Quest from './pages/Quest/Quest';
 import ReviewFinish from './pages/ReviewFinish/ReviewFinish';
+import Review from './pages/Review/Review';
 
 
 function App() {
@@ -39,6 +40,7 @@ function App() {
           <Route path='/mileage' element={<Mileage page={page} setPage={setPage} />} />
           <Route path='/my' element={<Setting page={page} setPage={setPage} />} />
           <Route path='/reviewFinish' element={<ReviewFinish page={page} setPage={setPage} />} />
+          <Route path='/review' element={<Review page={page} setPage={setPage} />} />
         </Routes>
         </MainLayout>
       }/>
