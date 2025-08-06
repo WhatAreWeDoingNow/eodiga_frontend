@@ -62,10 +62,18 @@ export const main_bar = css`
 `
 export const main_layout = css`
     display: flex;
+    overflow-y: auto;
     height: 100vh;
     width: 400px;
     box-sizing: border-box;
     flex: 1;
+
+     &::-webkit-scrollbar {
+        display: none;
+    }
+
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none;    /* Firefox */
 `
 export const bar = css`
     display: flex;
