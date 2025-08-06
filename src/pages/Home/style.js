@@ -114,3 +114,7 @@ export const categorys = css`
         font-weight: 600;
     }
 `
+
+export const color = css`
+    color: #FF6B6B;
+`
