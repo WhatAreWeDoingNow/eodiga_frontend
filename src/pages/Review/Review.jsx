@@ -1,10 +1,17 @@
 /** @jsxImportSource @emotion/react */
 import React from 'react'
 import * as s from './style'
+import { useNavigate } from 'react-router-dom';
 import MainButton from '../../components/MainButton/MainButton'
 
 
 function Review() {
+
+    const navigate = useNavigate(); // ⬅️ 이제 정상 작동합니다
+
+  const ReviewFinishMove = () => {
+    navigate('/main/reviewFinish');
+  };
     return (
         <div css={s.container}>
             <span css={s.reviewText}>리뷰 작성하기</span>
@@ -94,7 +101,7 @@ function Review() {
             </div>
 
             <div css={s.bottom_button}>
-                <MainButton text={'리뷰작성하기'}/>
+                <MainButton text={'리뷰작성하기'} onClick={ReviewFinishMove}/>
                 <p>고색센터 문의 | FAQ</p>
             </div>
         </div>

@@ -111,6 +111,9 @@ export const reviewText = css`
 
 `
 
+export const reviewText1 = css`
+    margin-top: 40px;
+`
 export const review = css`
     padding-top: 20px;
   align-items: center;
@@ -152,5 +155,37 @@ export const bottom_button = css`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 140px 20px 0px 20px;
+    margin: 50px 20px 0px 20px;
+`
+
+export const resButtonWrapper = css`
+  display: flex;
+  justify-content: space-between;
+  gap: 5px; /* 버튼 사이 간격 */
+  margin-top: 20px;
+  
+`
+
+export const resEdit = css`
+    width: 175px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: transparent;
+    border: 1px solid #929292;
+`
+export const resCancle = css`
+    width: 175px;
+    height: 30px;
+    border-radius: 7px;
+    background-color: transparent;
+    border: 1px solid #929292;
+`
+
+
+export const resReview = css`
+    width: 100%;
+    height: 30px;
+    border-radius: 7px;
+    background-color: transparent;
+    border: 1px solid #929292;
 `

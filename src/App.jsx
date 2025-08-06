@@ -19,6 +19,7 @@ import Quest from './pages/Quest/Quest';
 import Reservation from './pages/Reservation/Reservation';
 import ReviewFinish from './pages/ReviewFinish/ReviewFinish';
 import Review from './pages/Review/Review';
+import ReservationList from './pages/ReservationList/ReservationList'
 
 
 function App() {
@@ -41,6 +42,7 @@ function App() {
           <Route path='/detail/reservation' element={<Reservation/>}/>
           <Route path='/quest' element={<Quest page={page} setPage={setPage} />} />
           <Route path='/ReservationFinish' element={<ReservationFinish page={page} setPage={setPage} />} />
+          <Route path='/reservation' element={<ReservationList page={page} setPage={setPage} />} />
           <Route path='/mileage' element={<Mileage page={page} setPage={setPage} />} />
           <Route path='/my' element={<Setting page={page} setPage={setPage} />} />
           <Route path='/reviewFinish' element={<ReviewFinish page={page} setPage={setPage} />} />
