@@ -22,7 +22,6 @@ export const box = css`
 
 export const list_container = css`
     margin-top: 13px;
-    height: 616px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -132,9 +131,8 @@ export const reviewContent = css`
 `;
 
 export const reviewWrite = css`
-    margin-bottom: 200px;
     width: 100%;
-    height: 600px;
+    height: 142px;
     background-color: #fff;
     border-radius: 14px;
 
@@ -142,4 +140,11 @@ export const reviewWrite = css`
         margin-left: 10px;
         margin-top: 10px;
     }
+`
+
+export const bottom_button = css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 140px 20px 0px 20px;
 `
