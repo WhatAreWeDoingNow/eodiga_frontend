@@ -59,6 +59,7 @@ export const list_top = css`
 export const img = css`
     height: 101px;
     width: 101px;
+    border-radius: 14px;
 `
 
 export const text_box = css`
