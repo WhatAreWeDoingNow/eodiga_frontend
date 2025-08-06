@@ -7,7 +7,7 @@ function KakaoMap({ markers = [], markerImages = {} }) {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      '//dapi.kakao.com/v2/maps/sdk.js?appkey=8450f73053305cbd2a9dd0c9a80d041a&autoload=false';
+      '//dapi.kakao.com/v2/maps/sdk.js?appkey=bde9dda5a1583fd85bd96b7dffde52b9&autoload=false';
     script.async = true;
 
     script.onload = () => {
