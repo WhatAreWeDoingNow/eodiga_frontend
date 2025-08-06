@@ -104,22 +104,29 @@ const globalCalendarStyle = css`
 }
 `;
 
-function Calendar() {
+function Calendar({ onSelectDate }) {
   const [selected, setSelected] = useState();
+
+  // 날짜 선택 시 상태 업데이트 + 부모에 전달
+  const handleSelect = (date) => {
+    setSelected(date);
+    if (onSelectDate) {
+      onSelectDate(date);
+    }
+  };
 
   return (
     <div css={calendarWrapper}>
       <DayPicker
-  mode="single"
-  selected={selected}
-  onSelect={setSelected}
-  weekStartsOn={1}
-  captionLayout="dropdown-buttons"
-  formatters={{
-    formatCaption: (date) =>
-      `${date.getFullYear()}.${date.getMonth() + 1}`,
-  }}
-/>
+        mode="single"
+        selected={selected}
+        onSelect={handleSelect}  // 여기 수정
+        weekStartsOn={1}
+        captionLayout="dropdown-buttons"
+        formatters={{
+          formatCaption: (date) => `${date.getFullYear()}.${date.getMonth() + 1}`,
+        }}
+      />
       <style>{globalCalendarStyle.styles}</style>
     </div>
   );
