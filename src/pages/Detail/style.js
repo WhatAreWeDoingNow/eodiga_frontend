@@ -84,6 +84,7 @@ export const profile_more = css`
 export const home = css`
     display: flex;
     flex-direction: column;
+    width: 100%;
     padding: 10px 16px;
 `
 

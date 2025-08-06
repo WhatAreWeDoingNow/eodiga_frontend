@@ -14,36 +14,46 @@ function Detail() {
                 </div>
                 <hr css={s.hr('5')} />
                 <div css={s.profile}>
-                    <p css={s.porfile_text}>소개</p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p css={s.porfile_text}>소개</p>
+                        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7725 7.50049L19.2725 15.0005L11.7725 22.5005" stroke="#222222" stroke-width="1.25" />
+                        </svg>
+                    </div>
                     <div css={s.profile_more}>
                         <img src="../../../src/assets/profile.png" alt="" />
-                        <div>
-                            <p>부산기장 바닷바람이 스며드는곳, 달빛 도자기에서</p>
+                        <div style={{height: '100px'}}>
+                            {/* <p>부산기장 바닷바람이 스며드는곳, 달빛 도자기에서</p>
                             <p>흙을 빚으며 마음을 쉬어가는 시간을 가져보세요.</p>
                             <p>초보자도 쉽게 즐길 수 있는 원데이 클래스부터</p>
                             <p>나만의 머그컵과 접시, 화병을 만드는 체험까지 준비되어 있어요.</p>
                             <p>따뜻한 차 한잔과함께 소중한 사람과</p>
-                            <p>단 하나뿐인 도자기를 만드는 시간을 가져보세요.</p>
+                            <p>단 하나뿐인 도자기를 만드는 시간을 가져보세요.</p> */}
                         </div>
                     </div>
                 </div>
                 <hr css={s.hr('5')} />
                 <div css={s.home}>
-                    <p css={s.home_text}>홈</p>
-                    <div>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p css={s.home_text}>홈</p>
+                        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7725 7.50049L19.2725 15.0005L11.7725 22.5005" stroke="#222222" stroke-width="1.25" />
+                        </svg>
+                    </div>
+                    <div style={{display: 'flex', justifyContent: 'flex-start', flexDirection: 'column'}}>
                         <div css={s.home_more}>
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M16.75 10C16.75 14.1817 12.1764 17.0022 10.8541 17.7303C10.6307 17.8533 10.3693 17.8533 10.1459 17.7303C8.82359 17.0022 4.25 14.1817 4.25 10C4.25 6.25 7.27834 3.75 10.5 3.75C13.8333 3.75 16.75 6.25 16.75 10Z" stroke="#333333" stroke-width="0.833333" />
                                 <circle cx="10.5" cy="9.99984" r="2.91667" stroke="#333333" stroke-width="0.833333" />
                             </svg>
-                            <p>부산광역시 기장군 일광읍 바다향길 27, 달빛도자기 공방 </p>
+                            <p></p>
                         </div>
                         <div css={s.home_more}>
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M15.256 11.4226L17.4628 13.6294C17.7595 13.9261 17.7595 14.4072 17.4628 14.704C15.8584 16.3083 13.3185 16.4888 11.5034 15.1275L10.1905 14.1429C8.7376 13.0532 7.44691 11.7625 6.3572 10.3095L5.37257 8.99667C4.01123 7.18156 4.19174 4.64166 5.79609 3.03731C6.09283 2.74056 6.57395 2.74056 6.8707 3.03731L9.07747 5.24408C9.40291 5.56951 9.40291 6.09715 9.07747 6.42259L8.22651 7.27355C8.09128 7.40878 8.05775 7.61538 8.14328 7.78644C9.13217 9.76421 10.7358 11.3679 12.7136 12.3568C12.8847 12.4423 13.0913 12.4088 13.2265 12.2735L14.0775 11.4226C14.4029 11.0972 14.9305 11.0972 15.256 11.4226Z" stroke="#222222" stroke-width="0.833333" />
                             </svg>
 
-                            <p>051-777-1234</p>
+                            <p></p>
                         </div>
                         <div css={s.home_more}>
                             <svg width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -52,16 +62,23 @@ function Detail() {
                                 <path d="M4.25006 10H16.7501" stroke="#33363F" stroke-width="0.833333" stroke-linecap="round" />
                             </svg>
 
-                            <p style={{ color: '#3DA8DE' }}>https://www.instagram.com/miinxyo?igsh=
-                                cmkxd3A0bzFoYzJo&utm_source=qr</p>
+                            {/* <p style={{ color: '#3DA8DE' }}>https://www.instagram.com/miinxyo?igsh=
+                                cmkxd3A0bzFoYzJo&utm_source=qr</p> */}
+                                <p style={{ color: '#3DA8DE' }}></p> 
                         </div>
                     </div>
                 </div>
                 <hr css={s.hr('5')} />
                 <div css={s.reservation}>
-                    <p css={s.reservation_text}>예약</p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p css={s.reservation_text}>예약</p>
+                        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7725 7.50049L19.2725 15.0005L11.7725 22.5005" stroke="#222222" stroke-width="1.25" />
+                        </svg>
+                    </div>
+
                     <hr css={s.hr('3')} />
-                    <div css={s.reservation_more} onClick={() => navigate('/main/detail/reservation')}>
+                    {/* <div css={s.reservation_more} onClick={() => navigate('/main/detail/reservation')}>
                         <img src="../../../src/assets/detail_1.png" alt="" />
                         <div css={s.reservation_more_text}>
                             <p style={{ fontSize: '13px', fontWeight: '500' }}>원데이 머그컵 클래스</p>
@@ -102,13 +119,18 @@ function Detail() {
                                 <p>약 2시간 소요</p>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <hr css={s.hr('5')} />
                 <div css={s.review}>
-                    <p css={s.review_text}>리뷰</p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <p css={s.review_text}>리뷰</p>
+                        <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.7725 7.50049L19.2725 15.0005L11.7725 22.5005" stroke="#222222" stroke-width="1.25" />
+                        </svg>
+                    </div>
                     <hr css={s.hr('3')} />
-                    <div css={s.review_more}>
+                    {/* <div css={s.review_more}>
                         <div css={s.review_more_more}>
                             <div css={s.review_top}>
                                 <img src="../../../src/assets/detail_review.png" alt="" />
@@ -214,7 +236,7 @@ function Detail() {
                                 완성된 컵으로 커피 마실 생각에 벌써 설레요!”
                             </p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
