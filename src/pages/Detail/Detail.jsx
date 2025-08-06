@@ -3,8 +3,10 @@ import React from 'react'
 import { css } from '@emotion/react';
 
 import * as s from './style.js'
+import { useNavigate } from 'react-router-dom';
 
 function Detail() {
+    const navigate = useNavigate();
     return (
         <div css={s.container}>
             <div css={s.layout}>
@@ -59,7 +61,7 @@ function Detail() {
                 <div css={s.reservation}>
                     <p css={s.reservation_text}>예약</p>
                     <hr css={s.hr('3')} />
-                    <div css={s.reservation_more}>
+                    <div css={s.reservation_more} onClick={() => navigate('/main/detail/reservation')}>
                         <img src="../../../src/assets/detail_1.png" alt="" />
                         <div css={s.reservation_more_text}>
                             <p style={{ fontSize: '13px', fontWeight: '500' }}>원데이 머그컵 클래스</p>
@@ -73,7 +75,7 @@ function Detail() {
                             </div>
                         </div>
                     </div>
-                    <div css={s.reservation_more}>
+                    <div css={s.reservation_more} onClick={() => navigate('/main/detail/reservation')}>
                         <img src="../../../src/assets/detail_1.png" alt="" />
                         <div css={s.reservation_more_text}>
                             <p style={{ fontSize: '13px', fontWeight: '500' }}>원데이 머그컵 클래스</p>
@@ -87,7 +89,7 @@ function Detail() {
                             </div>
                         </div>
                     </div>
-                    <div css={s.reservation_more}>
+                    <div css={s.reservation_more} onClick={() => navigate('/main/detail/reservation')}>
                         <img src="../../../src/assets/detail_1.png" alt="" />
                         <div css={s.reservation_more_text}>
                             <p style={{ fontSize: '13px', fontWeight: '500' }}>원데이 머그컵 클래스</p>
