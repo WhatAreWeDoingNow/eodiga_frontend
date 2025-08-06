@@ -19,7 +19,7 @@ function ReservationList() {
             <div css={s.list_container}>
                 <div css={s.list_box}>
                     <div css={s.list_top}>
-                        <img src="../../../src/assets/image.png" alt="" css={s.img} />
+                        <img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2025/05/PS25050500364.jpg" alt="" css={s.img} />
                         <div css={s.text_box}>
                             <p style={{ color: '#929292' }}>공예 - 도자기</p>
                             <h1 style={{ color: '#FF6B6B' }}>기장 달빛 공방</h1>
@@ -92,7 +92,7 @@ function ReservationList() {
             <div css={s.list_container}>
                 <div css={s.list_box}>
                     <div css={s.list_top}>
-                        <img src="../../../src/assets/image.png" alt="" css={s.img} />
+                        <img src="https://image.edaily.co.kr/images/Photo/files/NP/S/2025/05/PS25050500364.jpg" alt="" css={s.img} />
                         <div css={s.text_box}>
                             <p style={{ color: '#929292' }}>공예 - 도자기</p>
                             <h1 style={{ color: '#FF6B6B' }}>기장 달빛 공방</h1>

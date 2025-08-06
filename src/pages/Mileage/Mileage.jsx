@@ -15,14 +15,14 @@ function Mileage () {
                     <div css={s.couponChangeText}>쿠폰교환</div>  
                     <div css={s.couponList}>
                         <div css={s.couponContainer}>
-                            <img css={s.CouponImg} />
+                            <img src='https://www.biz-con.co.kr/upload/images/202501/400_20250122164028679_2.jpg' css={s.CouponImg} />
                             <span css={s.couponText}>스타벅스</span>
                             <span css={s.couponText}>아이스 아메리카노</span>
                             <b css={s.couponText}>4,100M</b>
                         </div>
 
                         <div css={s.couponContainer}>
-                            <img css={s.CouponImg} />
+                            <img src='https://www.biz-con.co.kr/upload/images/202501/400_20250122164028679_2.jpg' css={s.CouponImg} />
                             <span css={s.couponText}>스타벅스</span>
                             <span css={s.couponText}>아이스 아메리카노</span>
                             <b css={s.couponText}>4,100M</b>
@@ -33,7 +33,7 @@ function Mileage () {
                 <div css={s.shopChangeText}>제휴처 혜택 교환</div>  
                     <div css={s.shopList}>
                         <div css={s.shopContainer}>
-                            <img css={s.shopImg} />
+                            <img src='https://newsimg-hams.hankookilbo.com/2022/05/25/06dcc6b7-1083-4709-b676-b85d35ecc815.jpg' css={s.shopImg} />
                             <span css={s.shopTitle}>기장 롯데월드</span>
                             <span css={s.shopText}>35% 할인 혜택</span>
                             <span css={s.shopText}>여가 및 테마파크</span>
@@ -41,7 +41,7 @@ function Mileage () {
                         </div>
 
                         <div css={s.shopContainer}>
-                            <img css={s.shopImg} />
+                            <img src='https://newsimg-hams.hankookilbo.com/2022/05/25/06dcc6b7-1083-4709-b676-b85d35ecc815.jpg' css={s.shopImg} />
                             <span css={s.shopTitle}>기장 롯데월드</span>
                             <span css={s.shopText}>35% 할인 혜택</span>
                             <span css={s.shopText}>여가 및 테마파크</span>
