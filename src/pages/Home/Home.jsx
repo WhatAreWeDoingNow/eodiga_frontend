@@ -93,8 +93,8 @@ const aiRecommendedPlaces = [
             <div css={s.bottom_layout}>
                 <div>
                     <div css={s.bottom_text}>
-                        <p>지역 핫플 추천</p>
-                        <p onClick={() => handleMoreClcik()}>더보기
+                        <p css={s.color}>지역 핫플 추천</p>
+                        <p onClick={() => handleMoreClcik()} css={s.color}>더보기
                             <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5.625 3.75L9.375 7.5L5.625 11.25" stroke="#FF6B6B" stroke-width="1.25" />
                             </svg>
@@ -113,7 +113,7 @@ const aiRecommendedPlaces = [
                             </div>
                 </div>
                 <div>
-                    <p>카테고리</p>
+                    <p css={s.color}>카테고리</p>
                     <div css={s.buttons}>
                         <div css={s.categorys}>
                             <button><img src='../../src/assets/heart.png' /></button>
@@ -157,7 +157,7 @@ const aiRecommendedPlaces = [
                     </div>
                 </div>
                 <div>
-                    <p>AI가 {userName}님을 위해 추천해드리는 관광지에요!</p>
+                    <p css={s.color}>AI가 {userName}님을 위해 추천해드리는 관광지에요!</p>
                     <div css={s.place_layout}>
   {aiRecommendedPlaces.map((place, i) => (
     <div key={i} css={s.place_list(167)}>
