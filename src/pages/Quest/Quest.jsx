@@ -40,9 +40,9 @@ const categoryStyles = {
 
 // 마커 이미지 경로 (KakaoMap 컴포넌트에 전달)
 const markerImages = {
-  연인과: '../../src/assets/marker_1.png',
-  아기와: '../../src/assets/marker_2.png',
-  카페: '../../src/assets/marker_3.png',
+  연인과: '../../src/assets/marker/marker_1.png',
+  아기와: '../../src/assets/marker/marker_2.png',
+  카페: '../../src/assets/marker/marker_3.png',
 };
 
 function Quest() {
